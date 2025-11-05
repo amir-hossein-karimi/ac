@@ -1,45 +1,44 @@
-import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import authReducer from '../../features/auth/store/authSlice';
+import { configureStore, combineReducers } from "@reduxjs/toolkit";
+import {
+  persistStore,
+  persistReducer,
+  FLUSH,
+  REHYDRATE,
+  PAUSE,
+  PERSIST,
+  PURGE,
+  REGISTER,
+} from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import authReducer from "../../features/auth/store/authSlice";
+import { baseApi } from "./api/baseApi";
 
-// Custom persistence middleware
-const localStorageMiddleware = (store: any) => (next: any) => (action: any) => {
-  const result = next(action);
-  
-  // Save state to localStorage after each action
-  const state = store.getState();
-  try {
-    localStorage.setItem('redux-state', JSON.stringify(state));
-  } catch (error) {
-    console.error('Error saving to localStorage:', error);
-  }
-  
-  return result;
-};
-
-// Load persisted state from localStorage
-const loadPersistedState = () => {
-  try {
-    const serializedState = localStorage.getItem('redux-state');
-    if (serializedState === null) {
-      return undefined;
-    }
-    return JSON.parse(serializedState);
-  } catch (error) {
-    console.error('Error loading from localStorage:', error);
-    return undefined;
-  }
+// Redux Persist configuration
+const persistConfig = {
+  key: "root",
+  version: 1,
+  storage,
+  whitelist: ["auth"], // Only persist auth
 };
 
 const rootReducer = combineReducers({
+  [baseApi.reducerPath]: baseApi.reducer,
   auth: authReducer,
 });
 
+const persistedReducer = persistReducer(persistConfig, rootReducer);
+
 export const store = configureStore({
-  reducer: rootReducer,
-  preloadedState: loadPersistedState(),
+  reducer: persistedReducer,
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(localStorageMiddleware),
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
+      },
+    }).concat(baseApi.middleware),
 });
+
+export const persistor = persistStore(store);
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;

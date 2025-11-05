@@ -1,0 +1,95 @@
+.services-hero {
+  @apply py-20 bg-gradient-to-br from-blue-600 to-blue-800 text-white;
+}
+
+.services-hero-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
+}
+
+.services-grid-section {
+  @apply py-20;
+}
+
+.services-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.service-card {
+  @apply hover:shadow-xl transition-all hover:-translate-y-1;
+}
+
+.service-icon-wrapper {
+  @apply h-14 w-14 rounded-lg flex items-center justify-center mb-4;
+}
+
+.service-features {
+  @apply space-y-2;
+}
+
+.service-feature {
+  @apply flex items-center gap-2 text-muted-foreground;
+}
+
+.services-image-section {
+  @apply py-12;
+}
+
+.services-image {
+  @apply rounded-lg shadow-2xl w-full max-h-96 object-cover;
+}
+
+.services-pricing {
+  @apply py-20;
+}
+
+.pricing-header {
+  @apply text-center mb-12;
+}
+
+.pricing-grid {
+  @apply grid md:grid-cols-3 gap-6;
+}
+
+.pricing-card {
+  @apply relative;
+}
+
+.pricing-card-highlighted {
+  @apply border-blue-600 shadow-xl scale-105;
+}
+
+.pricing-features {
+  @apply space-y-3;
+}
+
+.faq-section {
+  @apply py-20 bg-white;
+}
+
+.faq-content {
+  @apply max-w-4xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.faq-header {
+  @apply text-center mb-12;
+}
+
+.process-section {
+  @apply py-20;
+}
+
+.process-header {
+  @apply text-center mb-12;
+}
+
+.process-tabs {
+  @apply w-full;
+}
+
+.process-tab-list {
+  @apply grid w-full grid-cols-4 mb-8;
+}
+
+.process-content {
+  @apply space-y-2;
+}

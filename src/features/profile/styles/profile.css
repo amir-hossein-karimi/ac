@@ -1,0 +1,71 @@
+.profile-container {
+  @apply min-h-screen bg-gradient-to-b from-blue-50 to-white;
+}
+
+.profile-header {
+  @apply bg-gradient-to-r from-blue-600 to-blue-800 text-white py-12 mb-4;
+}
+
+.profile-header-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.profile-header-info {
+  @apply flex flex-col md:flex-row items-center gap-6;
+}
+
+.profile-avatar {
+  @apply h-24 w-24 border-4 border-white;
+}
+
+.profile-user-info {
+  @apply text-center md:text-left flex-1;
+}
+
+.profile-name {
+  @apply mb-2 text-white;
+}
+
+.profile-email {
+  @apply text-blue-100 mb-3;
+}
+
+.profile-badges {
+  @apply flex flex-wrap gap-2 justify-center md:justify-start;
+}
+
+.profile-stats-section {
+  @apply py-8 -mt-8;
+}
+
+.profile-stats-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-4;
+}
+
+.profile-main-content {
+  @apply py-12;
+}
+
+.profile-tab-list {
+  @apply grid w-full grid-cols-2 md:grid-cols-5 mb-8;
+}
+
+.profile-overview {
+  @apply space-y-6;
+}
+
+.profile-info-grid {
+  @apply grid md:grid-cols-2 gap-6;
+}
+
+.profile-activity-list {
+  @apply space-y-4;
+}
+
+.profile-activity-item {
+  @apply flex items-start gap-4 pb-4 border-b last:border-0;
+}
+
+.profile-activity-icon {
+  @apply h-10 w-10 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0;
+}

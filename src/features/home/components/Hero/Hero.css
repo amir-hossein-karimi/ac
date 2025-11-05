@@ -1,0 +1,21 @@
+.home-hero {
+  padding: 6rem 1rem;
+}
+
+.home-hero-content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.home-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+@media (max-width: 768px) {
+  .home-hero-grid {
+    grid-template-columns: 1fr;
+  }
+}

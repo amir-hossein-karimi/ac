@@ -72,26 +72,26 @@ This project has been restructured using a **core and feature** architecture pat
 ### Core Imports
 ```tsx
 // UI Components
-import { Button } from '../../core/ui/button';
-import { Card } from '../../core/ui/card';
+ import { Button } from '@/core/components/ui/button';
+ import { Card } from '@/core/components/ui/card';
 
 // Shared Components
-import { Navigation } from '../../core/components/Navigation';
-import { ImageWithFallback } from '../../core/components/figma/ImageWithFallback';
+ import { Navigation } from '@/core/components/Navigation';
+ import { ImageWithFallback } from '@/core/components/figma/ImageWithFallback';
 
 // Store
-import { store } from '../../core/store/store';
+ import { store } from '@/core/store/store';
 ```
 
 ### Feature Imports
 ```tsx
 // From auth feature
-import { useAppSelector } from '../../features/auth/hooks/useAuth';
-import { login, logout } from '../../features/auth/store/authSlice';
+ import { useAppSelector } from '@/features/auth/hooks/useAuth';
+ import { login, logout } from '@/features/auth/store/authSlice';
 
 // Feature components
-import { HomePage } from '../../features/home/components/HomePage';
-import { ProfilePage } from '../../features/profile/components/ProfilePage';
+ import { HomePage } from '@/features/home/components/HomePage';
+ import { ProfilePage } from '@/features/profile/components/ProfilePage';
 ```
 
 ## Key Features

@@ -1,0 +1,71 @@
+.home-hero {
+  @apply bg-gradient-to-br from-blue-50 to-blue-100 py-20;
+}
+
+.home-hero-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.home-hero-grid {
+  @apply grid md:grid-cols-2 gap-12 items-center;
+}
+
+.home-stats-section {
+  @apply py-12 bg-blue-600 text-white;
+}
+
+.home-stats-grid {
+  @apply grid grid-cols-2 md:grid-cols-4 gap-8;
+}
+
+.home-stats-item {
+  @apply text-center;
+}
+
+.home-stats-value {
+  @apply mb-2;
+}
+
+.home-stats-label {
+  @apply text-blue-100;
+}
+
+.home-features-section {
+  @apply py-20;
+}
+
+.home-features-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+}
+
+.home-features-header {
+  @apply text-center mb-12;
+}
+
+.home-features-grid {
+  @apply grid md:grid-cols-2 lg:grid-cols-3 gap-6;
+}
+
+.home-testimonials-section {
+  @apply py-20 bg-gradient-to-br from-blue-50 to-white;
+}
+
+.home-cta-section {
+  @apply py-20 bg-blue-600 text-white;
+}
+
+.home-cta-content {
+  @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center;
+}
+
+.home-cta-title {
+  @apply mb-4 text-white;
+}
+
+.home-cta-description {
+  @apply mb-8 text-blue-100 max-w-2xl mx-auto;
+}
+
+.home-cta-buttons {
+  @apply flex flex-wrap gap-4 justify-center;
+}

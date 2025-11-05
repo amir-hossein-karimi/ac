@@ -1,5 +1,5 @@
-import { Navigate } from 'react-router-dom';
-import { useAppSelector } from '../../features/auth/hooks/useAuth';
+import { Navigate } from "react-router-dom";
+import { useAppSelector } from "@/features/auth/hooks/useAuth";
 
 interface PrivateRouteProps {
   children: React.ReactNode;

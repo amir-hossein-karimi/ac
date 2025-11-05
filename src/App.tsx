@@ -1,14 +1,21 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { Provider } from 'react-redux';
-import { store } from './core/store/store';
-import { Navigation } from './core/components/Navigation';
-import { ScrollToTop } from './core/components/ScrollToTop';
-import { HomePage } from './features/home/components/HomePage';
-import { ServicesPage } from './features/services/components/ServicesPage';
-import { ProfilePage } from './features/profile/components/ProfilePage';
-import { LoginPage } from './features/auth/components/LoginPage';
-import { PrivateRoute } from './core/layouts/PrivateRoute';
-import { Toaster } from './components/ui/sonner';
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
+import { store, persistor } from "@/core/store/store";
+import { Spinner } from "@/core/components/ui/loading";
+import { Navigation } from "@/core/components/Navigation";
+import { ScrollToTop } from "@/core/components/ScrollToTop";
+import { HomePage } from "@/features/home/pages/HomePage";
+import { ServicesPage } from "@/features/services/pages/ServicesPage";
+import { ProfilePage } from "@/features/profile/pages/ProfilePage";
+import { LoginPage } from "@/features/auth/pages/LoginPage";
+import { PrivateRoute } from "@/core/layouts/PrivateRoute";
+import { Toaster } from "@/core/components/ui/sonner";
 
 function AppRoutes() {
   return (
@@ -17,7 +24,7 @@ function AppRoutes() {
       <Routes>
         {/* Public Route */}
         <Route path="/login" element={<LoginPage />} />
-        
+
         {/* Private Routes */}
         <Route
           path="/"
@@ -52,7 +59,7 @@ function AppRoutes() {
             </PrivateRoute>
           }
         />
-        
+
         {/* Catch all route */}
         <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
@@ -64,7 +71,16 @@ function AppRoutes() {
 export default function App() {
   return (
     <Provider store={store}>
-      <AppRoutes />
+      <PersistGate
+        persistor={persistor}
+        loading={
+          <div className="flex min-h-screen items-center justify-center">
+            <Spinner size="lg" />
+          </div>
+        }
+      >
+        <AppRoutes />
+      </PersistGate>
     </Provider>
   );
 }

@@ -1,0 +1,36 @@
+.home-cta-section {
+  padding: 6rem 1rem;
+  background-color: #2563eb;
+  color: white;
+}
+
+.home-cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.home-cta-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 1rem;
+}
+
+.home-cta-description {
+  font-size: 1.125rem;
+  margin-bottom: 2rem;
+  opacity: 0.9;
+}
+
+.home-cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+@media (max-width: 640px) {
+  .home-cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}
