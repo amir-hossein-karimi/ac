@@ -16,6 +16,7 @@ import { ProfilePage } from "@/features/profile/pages/ProfilePage";
 import { LoginPage } from "@/features/auth/pages/LoginPage";
 import { PrivateRoute } from "@/core/layouts/PrivateRoute";
 import { Toaster } from "@/core/components/ui/sonner";
+import RegisterPage from "./features/auth/pages/RegisterPage";
 
 function AppRoutes() {
   return (
@@ -24,7 +25,7 @@ function AppRoutes() {
       <Routes>
         {/* Public Route */}
         <Route path="/login" element={<LoginPage />} />
-
+        <Route path="/register" element={<RegisterPage />} />
         {/* Private Routes */}
         <Route
           path="/"
